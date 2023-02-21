@@ -136,7 +136,7 @@ export default function SignInSide() {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Email Address (Sincere@april.biz)"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -147,7 +147,7 @@ export default function SignInSide() {
               required
               fullWidth
               id="email"
-              label="Email"
+              label="Email (Sincere@april.biz)"
               name="email"
               autoComplete="email"
               autoFocus
@@ -158,7 +158,7 @@ export default function SignInSide() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Password (Bret)"
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -169,7 +169,7 @@ export default function SignInSide() {
               required
               fullWidth
               name="password"
-              label="Password"
+              label="Password (Bret)"
               type="password"
               id="password"
               autoComplete="current-password"

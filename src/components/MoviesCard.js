@@ -7,6 +7,8 @@ import { Button, CardActionArea } from '@mui/material';
 
 
 import { useNavigate } from 'react-router-dom';
+import { favoriteContext } from '../App';
+import { useContext } from 'react';
 
 
 // id={movie.id}
@@ -36,10 +38,16 @@ const styles = {
 
 export default function MoviesCard({movie}){
   const navigate= useNavigate()  
- 
+  const { isLogin } = useContext(favoriteContext)
   const handleDetail = (id)=>{
-    navigate(`/detail/${id}`)
+    if (isLogin) {
+      navigate(`/detail/${id}`)
+    }else{
+      navigate("/login")
+    }
+    
   }
+  
   return (
     <>
     <Card sx={{ maxWidth:300 ,borderRadius:5 }}>
@@ -60,7 +68,7 @@ export default function MoviesCard({movie}){
         <Typography variant="body2" >
           {movie.overview}
         </Typography>
-        <Button  sx={{color:"blue", m:"35%"}} onClick={()=>handleDetail(movie.id)} >
+       <Button  sx={{color:"blue", m:"35%"}} onClick={()=>handleDetail(movie.id)} >
           Detail
         </Button>
       </CardContent>
