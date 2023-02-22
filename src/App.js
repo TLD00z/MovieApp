@@ -10,6 +10,7 @@ import Searchs from './pages/Searchs';
 import Favorite from './pages/Favorite';
 import { createContext,  useState } from 'react';
 import MovieDetail from './pages/MovieDetail';
+// import LoadingBar from './components/LoadingBar';
 
 
 export const favoriteContext= createContext()
@@ -21,12 +22,13 @@ function App() {
   const [favourites, setFavourites] = useState([]);
   const [isLogin,setIsLogin] = useState(false)
   const [inFavoritesList, setinFavoritesList] = useState() 
- 
+
   
   return (
     <favoriteContext.Provider value={{favourites ,setFavourites ,isLogin,setIsLogin ,inFavoritesList, setinFavoritesList}}>
     <BrowserRouter>
       <Bar/>
+      
       <div className="app">
         <Container>
           <Routes>

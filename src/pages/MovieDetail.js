@@ -8,7 +8,7 @@ import { Box } from "@mui/system";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import MobileViewMD from "../components/MobileViewMD";
-
+import LoadingBar from '../components/LoadingBar'
 
 const MovieDetail = () => {
   const { id } = useParams()
@@ -122,7 +122,7 @@ const MovieDetail = () => {
       <MobileViewMD movie={movie} inFavoritesList={inFavoritesList} setinFavoritesList={setinFavoritesList} />
     </Box>
 
-      : <Box>Loading...</Box>}
+      :<LoadingBar/> }
   </>
   )
 }

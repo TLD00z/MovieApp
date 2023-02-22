@@ -10,9 +10,9 @@ import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import { Link, useNavigate } from 'react-router-dom';
 import {  BottomNavigationAction, IconButton } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
-
 import LoginIcon from '@mui/icons-material/Login';
 import { favoriteContext } from '../App';
+import LoadingBar from './LoadingBar';
 
 export default function Bar() {
   const {isLogin,setIsLogin} = React.useContext(favoriteContext);
@@ -39,6 +39,8 @@ export default function Bar() {
          </Box>
         {!isLogin?<Link to={"/Login"}><BottomNavigationAction label="Movie" icon={< LoginIcon />} /></Link>:<IconButton onClick={handleLogout}><LogoutIcon/></IconButton>}
       </AppBar>
+      <LoadingBar progress={50}/>
     </Box>
+    
   );
 }

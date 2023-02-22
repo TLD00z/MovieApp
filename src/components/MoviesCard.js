@@ -4,18 +4,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea } from '@mui/material';
-
-
 import { useNavigate } from 'react-router-dom';
 import { favoriteContext } from '../App';
 import { useContext } from 'react';
 
-
-// id={movie.id}
-// poster={movie.poster_path}
-// title ={movie.title}
-// releaseDate={movie.release_date}
-// voteAverag={movie.vote_averag}
 const styles = {
         cardContent: {
           position: "absolute",
@@ -51,7 +43,7 @@ export default function MoviesCard({movie}){
   return (
     <>
     <Card sx={{ maxWidth:300 ,borderRadius:5 }}>
-    <CardActionArea sx={styles.cardActionArea}>
+      <CardActionArea sx={styles.cardActionArea}>
       <CardMedia
         component="img"
         height="500"
@@ -68,20 +60,13 @@ export default function MoviesCard({movie}){
         <Typography variant="body2" >
           {movie.overview}
         </Typography>
-       <Button  sx={{color:"blue", m:"35%"}} onClick={()=>handleDetail(movie.id)} >
+       <Button  sx={{ m:"35%" ,ml:"0"}} onClick={()=>handleDetail(movie.id)} >
           Detail
         </Button>
       </CardContent>
       
-     
     </CardActionArea>
-  </Card>
+      </Card>
     </>
-    
-    
   );
 } 
-/* <Button  sx={{color:"blue", m:"25%"}} onClick={()=>addFavouriteMovie(movie)} >
-            add to Favorite
-          </Button> 
-*/

@@ -43,7 +43,7 @@ export default function SignInSide() {
 		localStorage.setItem('login', JSON.stringify(items));
 	};
   
-  function checkLogin(email,password,data) { //setTimeout()
+  function checkLogin(email,password,data) { 
     const obj = data.find(item => item.email === email);
     if(obj){
       if(obj.username === password){
@@ -106,7 +106,7 @@ export default function SignInSide() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random)',
+            backgroundImage: 'url(https://media.istockphoto.com/id/1406127371/photo/women-wearing-3d-glasses-watching-a-movie-and-her-giant-popcorn-3d-render-illustration.jpg?b=1&s=170667a&w=0&k=20&c=sOe1e0SkxCmB6HsDN_NbzH9hPGhQpzXAXesWs2a7jTA=)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -147,7 +147,7 @@ export default function SignInSide() {
               required
               fullWidth
               id="email"
-              label="Email (Sincere@april.biz)"
+              label="Email (Sincere@april.biz)" //Sincere@april.biz
               name="email"
               autoComplete="email"
               autoFocus
@@ -158,7 +158,7 @@ export default function SignInSide() {
                 required
                 fullWidth
                 name="password"
-                label="Password (Bret)"
+                label="Password (Bret)" //Bret
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -175,10 +175,7 @@ export default function SignInSide() {
               autoComplete="current-password"
               helperText={ pasErrorMS }
             />} 
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
+              
               <Button
                 type="submit"
                 fullWidth
@@ -187,19 +184,7 @@ export default function SignInSide() {
               >
                 Sign In
               </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Grid>
-              </Grid>
-              <Copyright sx={{ mt: 5 }} />
+              
             </Box>
           </Box>
         </Grid>
